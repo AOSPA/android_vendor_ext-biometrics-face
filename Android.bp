@@ -67,6 +67,90 @@ cc_prebuilt_library_shared {
     prefer: true,
 }
 
+cc_prebuilt_library_shared {
+    name: "libSNPE",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["prebuilt/lib64/libSNPE.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libc++_shared",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["prebuilt/lib64/libc++_shared.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqspower",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["prebuilt/lib64/libqspower-1.0.0.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsnpe_loader",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["prebuilt/lib64/libsnpe_loader.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsymphony-cpu",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["prebuilt/lib64/libsymphony-cpu.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsymphonypower",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["prebuilt/lib64/libsymphonypower.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
 prebuilt_etc {
     name: "ext_face_perms",
     sub_dir: "permissions",
