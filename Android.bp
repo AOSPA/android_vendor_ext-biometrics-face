@@ -1,5 +1,5 @@
 java_library {
-    name: "vendor.ext.biometrics.face.V1_0",
+    name: "vendor.pa.biometrics.face.V1_0",
     installable: true,
 
     srcs: [

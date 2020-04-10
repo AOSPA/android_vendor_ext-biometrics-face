@@ -14,21 +14,27 @@
  * limitations under the License.
  */
 
-package vendor.ext.biometrics.face.V1_0;
+package vendor.pa.biometrics.face.V1_0;
 
 /** @hide */
-oneway interface IExtFaceServiceReceiver {
-    void onEnrollResult(int faceId, int userId, int remaining);
+interface IFaceUnlockService {
+    int authenticate(in byte[] token, int width, int height);
 
-    void onAuthenticated(int faceId, int userId, in byte[] token);
+    oneway void cancelEnrollment();
 
-    void onAcquired(int userId, int acquiredInfo, int vendorCode);
+    oneway void endAuthenticate();
 
-    void onError(int error, int vendorCode);
+    oneway void endEnrollment();
 
-    void onRemoved(in int[] faceIds, int userId);
+    int enroll(in byte[] token, int width, int height, int left, int right, int top, int bottom);
 
-    void onEnumerate(in int[] faceIds, int userId);
+    int getActiveUserCount();
 
-    void onLockoutChanged(long duration);
+    int getEnrollmentSteps();
+
+    String getSdkType();
+
+    oneway void removeActiveUser(long userId);
+
+    oneway void setActiveUser(long userId);
 }
