@@ -11,6 +11,25 @@ java_library {
     },
 }
 
+android_app_import {
+    name: "ParanoidFaceSense",
+    apk: "prebuilt/priv-app/ParanoidFaceSense/ParanoidFaceSense.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    required: [
+        "libFaceDetectCA",
+        "libmegface",
+        "libMegviiUnlock",
+        "libMegviiUnlock-jni",
+        "paranoid_sense_perms",
+        "paranoid_sense_whitelist_perms",
+        "paranoid_sense_hiddenapi"
+    ],
+}
+
 cc_prebuilt_library_shared {
     name: "libFaceDetectCA",
     strip: {
@@ -71,5 +90,19 @@ prebuilt_etc {
     name: "paranoid_sense_perms",
     sub_dir: "permissions",
     src: "prebuilt/etc/permissions/android.hardware.biometrics.face.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "paranoid_sense_whitelist_perms",
+    sub_dir: "permissions",
+    src: "prebuilt/etc/permissions/com.paranoid.facesense.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "paranoid_sense_hiddenapi",
+    sub_dir: "sysconfig",
+    src: "prebuilt/etc/sysconfig/hiddenapi-whitelist-com.paranoid.facesense.xml",
     filename_from_src: true,
 }
