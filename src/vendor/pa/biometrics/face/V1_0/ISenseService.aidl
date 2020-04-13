@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package vendor.ext.biometrics.face.V1_0;
+package vendor.pa.biometrics.face.V1_0;
 
-import vendor.ext.biometrics.face.V1_0.IExtFaceServiceReceiver;
+import vendor.pa.biometrics.face.V1_0.ISenseServiceReceiver;
 
 /** @hide */
-interface IExtFaceService {
+interface ISenseService {
     oneway void authenticate(long operationId);
 
     oneway void cancel();
@@ -32,17 +32,11 @@ interface IExtFaceService {
 
     int getAuthenticatorId();
 
-    boolean getFeature(int feature, int faceId);
-
-    int getFeatureCount();
-
     oneway void remove(int biometricId);
 
     oneway void resetLockout(in byte[] cryptoToken);
 
     int revokeChallenge();
 
-    oneway void setCallback(in IExtFaceServiceReceiver receiver);
-
-    oneway void setFeature(int feature, boolean enable, in byte[] token, int faceId);
+    oneway void setCallback(in ISenseServiceReceiver receiver);
 }

@@ -1,5 +1,5 @@
 java_library {
-    name: "vendor.ext.biometrics.face.V1_0",
+    name: "vendor.pa.biometrics.face.V1_0",
     installable: true,
 
     srcs: [
@@ -68,7 +68,7 @@ cc_prebuilt_library_shared {
 }
 
 prebuilt_etc {
-    name: "ext_face_perms",
+    name: "paranoid_sense_perms",
     sub_dir: "permissions",
     src: "prebuilt/etc/permissions/android.hardware.biometrics.face.xml",
     filename_from_src: true,

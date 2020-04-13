@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package vendor.ext.biometrics.face.V1_0;
+package vendor.pa.biometrics.face.V1_0;
 
 /** @hide */
-oneway interface IExtFaceServiceReceiver {
+oneway interface ISenseServiceReceiver {
     void onEnrollResult(int faceId, int userId, int remaining);
 
     void onAuthenticated(int faceId, int userId, in byte[] token);
